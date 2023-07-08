@@ -5,7 +5,8 @@
 
             <div class="col-md-6 offset-md-3 q-pa-md">
                 <div class="q-gutter-md text-center" style="">
-                    <h4 class="q-mb-sm text-white text-center">Sellect interested cities to receive targeted suggestion?</h4>
+                    <h4 class="q-mb-sm text-white text-center">Sellect interested cities to receive targeted suggestion?
+                    </h4>
                     <div class="text-center">
                         <q-input color="grey-3" label-color="silver" @update="searchInput" outlined v-model="searchName"
                             label="Please Search Your States" style=" width: 34rem; margin: 0 auto;">
@@ -25,7 +26,7 @@
                     <div class="q-pa-md q-gutter-sm text-white text-center ">
 
                         <q-btn color="white" text-color="black" v-for="s in filteredState" :key="s"
-                            :to="{ name: 'sent', params: { city: `${s}` } }" :label="s" />
+                            :to="{ name: 'kindOfPropertyBuyer', params: { city: `${s}` } }" :label="s" />
                     </div>
 
 
@@ -39,7 +40,6 @@
     </div>
 </template>
 <script setup>
-import SidePicture from '../../components/SidePicture.vue'
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'

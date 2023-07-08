@@ -3,9 +3,10 @@
 
         <div class="col-md-6 offset-md-3 q-pa-md q-gutter-y-md">
             <h1 class="text-white text-center" style="
-    font-size: 24px;
-    margin-bottom: 27px;
-">How do you make your payment</h1>
+font-size: 24px;
+    /* margin-bottom: 10px; */
+    line-height: 20px;
+">How will the property be used</h1>
             <div class="col-md-3 q-mb-lg q-mr-xl text-center cursor" v-for="(value, index) in inputValues" :key="index">
 
                 <input type="hidden" ref="hiddenInputs" :value="value" />
@@ -15,17 +16,9 @@
 
 
             </div>
-            <div class="col-md-3 q-mb-lg q-mr-xl text-center cursor">
-
-                <q-input label-color="white" v-model="other" outlined rounded label="other" />
 
 
-            </div>
 
-            <div class="col-md-3 q-mb-lg q-mr-xl text-center cursor">
-                <q-btn label="next" type="submit" color="negative" @click="nextStep" />
-
-            </div>
 
 
         </div>
@@ -34,25 +27,25 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useBuyerStore } from '../../stores/buyer.js'
+import { useSellerStore } from '../../stores/seller.js'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
 
-const inputValues = ref(['cash', 'Private money', 'Ioan']);
+const inputValues = ref(['Primary residence', 'Secondary homes', 'Invesment property']);
 const hiddenInputs = ref([]);
-const other = ref('')
 
-const store = useBuyerStore()
+
+const store = useSellerStore()
 
 function nextStep(index) {
 
     const hiddenInputValue = hiddenInputs.value[index].value;
     console.log(hiddenInputValue)
 
-    store.updateBuyer({ HowMakeYourPayment: hiddenInputValue });
-    router.push('/buyer/optionOffer')
+    store.updateSeller({ howSoonToSell: hiddenInputValue });
+    router.push('/buyer/informationBuy')
 }
 
 </script>

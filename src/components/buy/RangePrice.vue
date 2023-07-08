@@ -25,21 +25,21 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useSellerStore } from '../../stores/seller.js'
+import { useBuyerStore } from '../../stores/buyer.js'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const inputValues = ref([]);
+const inputValues = ref(['$ 150 k or less', '$ 150 k - $ 300 k', '$ 300 k - $ 500 k', '$ 500 k - $ 800 k', '$ 800 k - $ 1.5 M', '$ 1.5 M or more']);
 const hiddenInputs = ref([]);
 
 
-const store = useSellerStore()
+const store = useBuyerStore()
 
 function nextStep(index) {
     const hiddenInputValue = hiddenInputs.value[index].value;
 
-    store.updateSeller({ approximatlyHome: hiddenInputValue });
-    router.push('/payment')
+    store.updateBuyer({ RangePrice: hiddenInputValue });
+    router.push('paymentBuy')
 }
 
 </script>

@@ -32,18 +32,18 @@
 import { ref } from 'vue';
 import { useSellerStore } from '../../stores/seller.js'
 
-import { useRouter } from 'vue-router'
+import { useRoute,useRouter } from 'vue-router'
 const zipCode = ref('')
 const addressProperty = ref('')
-
+const route = useRoute()
 const router = useRouter()
 const store = useSellerStore()
 
 function sentForm() {
 
-    console.log(route.params.state, route.params.city, zipCode.value, addressProperty.value)
+
     store.updateSeller({ state: route.params.state, city: route.params.city, zipCode: zipCode.value, addressProperty: addressProperty.value });
-    router.push('/kindOfProperty')
+    router.push('/kindOfPropertySell')
 }
 
 </script>

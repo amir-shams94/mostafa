@@ -3,9 +3,12 @@
 
         <div class="col-md-6 offset-md-3 q-pa-md">
             <h1 class="text-white text-center" style="
-    font-size: 24px;
-    margin-bottom: 27px;
-">What is your home criteria</h1>
+font-size: 24px;
+    /* margin-bottom: 10px; */
+    line-height: 20px;
+">Personal information</h1>
+            <p class="text-white text-center q-mb-xl">Our services are 100% free</p>
+
 
 
             <q-form @submit="sentForm" @reset="onReset" class="q-gutter-md text-white">
@@ -23,7 +26,7 @@
 
 
                 <div>
-                    <q-btn class="full-width" rounded label="next" type="submit" color="negative" />
+                    <q-btn class="full-width" rounded label="finish" type="submit" color="negative" />
 
                 </div>
             </q-form>

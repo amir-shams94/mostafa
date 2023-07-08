@@ -8,7 +8,7 @@ export const useBuyerStore = defineStore('buyer', {
   actions: {
     updateBuyer(buyerUpdate) {
       console.log(buyerUpdate)
-      this.seller = {
+      this.buyer = {
         ...this.buyer,
         ...buyerUpdate,
       }
