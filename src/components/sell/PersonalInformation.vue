@@ -3,9 +3,11 @@
 
         <div class="col-md-6 offset-md-3 q-pa-md">
             <h1 class="text-white text-center" style="
-    font-size: 24px;
-    margin-bottom: 27px;
-">What is your home criteria</h1>
+font-size: 24px;
+    /* margin-bottom: 10px; */
+    line-height: 20px;
+">Personal information</h1>
+            <p class="text-white text-center q-mb-xl">Our services are 100% free</p>
 
 
             <q-form @submit="sentForm" @reset="onReset" class="q-gutter-md text-white">
@@ -57,7 +59,7 @@ function sentForm() {
     });
     // console.log(route.params.state, route.params.city, zipCode.value, addressProperty.value)
     store.updateSeller({ personalInformation });
-    router.push('/congratulations')
+    router.push('/seller/congratulations')
 }
 
 </script>

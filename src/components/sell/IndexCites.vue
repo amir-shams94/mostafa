@@ -25,7 +25,7 @@
                     <div class="q-pa-md q-gutter-sm text-white text-center ">
 
                         <q-btn color="white" text-color="black" v-for="s in filteredState" :key="s"
-                            :to="{ name: 'sent', params: { city: `${s}` } }" :label="s" />
+                            :to="{ name: 'sentSell', params: { city: `${s}` } }" :label="s" />
                     </div>
 
 

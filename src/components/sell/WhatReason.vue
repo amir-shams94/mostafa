@@ -39,7 +39,7 @@ function nextStep() {
 
     store.updateSeller({ whatSellReason: reason.value });
 
-    router.push('/information')
+    router.push('/seller/information')
 
 
 }

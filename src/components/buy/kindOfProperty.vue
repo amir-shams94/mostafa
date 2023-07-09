@@ -8,7 +8,7 @@
 ">What kind of property do you want to buy</h1>
 
             <div class="row" style="justify-content: center;">
-                <div class="col-md-3 q-mb-lg q-mr-xl text-center cursor" v-for="(value, index) in inputValues" :key="index">
+                <div class="col-md-3 q-mb-lg q-mr-sm text-center cursor" v-for="(value, index) in inputValues" :key="index">
 
                     <input type="hidden" ref="hiddenInputs" :value="value" />
                     <q-btn class="q-pa-md q-px-md size-btn" color="white" text-color="black" @click="nextStep(index)">{{

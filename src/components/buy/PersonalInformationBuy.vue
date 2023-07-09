@@ -60,7 +60,7 @@ function sentForm() {
     });
     // console.log(route.params.state, route.params.city, zipCode.value, addressProperty.value)
     store.updateSeller({ personalInformation });
-    router.push('/congratulations')
+    router.push('/buyer/congratulations')
 }
 
 </script>

@@ -27,7 +27,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useSellerStore } from '../../stores/seller.js'
-import {  useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
@@ -44,7 +44,7 @@ function nextStep(index) {
     console.log(hiddenInputValue)
 
     store.updateSeller({ howSoonToSell: hiddenInputValue });
-    router.push('/reason')
+    router.push('/seller/reason')
 }
 
 </script>

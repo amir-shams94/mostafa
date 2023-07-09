@@ -32,7 +32,7 @@
 import { ref } from 'vue';
 import { useSellerStore } from '../../stores/seller.js'
 
-import { useRoute,useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 const zipCode = ref('')
 const addressProperty = ref('')
 const route = useRoute()
@@ -43,7 +43,7 @@ function sentForm() {
 
 
     store.updateSeller({ state: route.params.state, city: route.params.city, zipCode: zipCode.value, addressProperty: addressProperty.value });
-    router.push('/kindOfPropertySell')
+    router.push('/seller/kindOfPropertySell')
 }
 
 </script>

@@ -28,7 +28,7 @@ font-size: 24px;
 
 <script setup>
 import { ref } from 'vue';
-import { useBuyerStore } from '../../stores/seller.js'
+import { useBuyerStore } from '../../stores/buyer.js'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -38,14 +38,14 @@ const inputValues = ref(['Less than 14 days', '14 - 30 days', ' 30 - 60 days', '
 const hiddenInputs = ref([]);
 
 
-const store = useSellerStore()
+const store = useBuyerStore()
 
 function nextStep(index) {
 
     const hiddenInputValue = hiddenInputs.value[index].value;
-    console.log(hiddenInputValue)
 
-    store.updateSeller({ howSoonToSell: hiddenInputValue });
+
+    store.updateBuyer({ howSoonToSell: hiddenInputValue });
     router.push('/buyer/PropertyBeUsed')
 }
 

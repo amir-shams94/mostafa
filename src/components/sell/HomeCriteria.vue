@@ -53,7 +53,7 @@ function sentForm() {
 
     store.updateSeller({ HomeCriteria });
 
-    router.push('/approximatly')
+    router.push('/seller/approximatly')
 }
 
 </script>

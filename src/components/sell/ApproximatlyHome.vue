@@ -39,7 +39,7 @@ function nextStep(index) {
     const hiddenInputValue = hiddenInputs.value[index].value;
 
     store.updateSeller({ approximatlyHome: hiddenInputValue });
-    router.push('/payment')
+    router.push('/seller/payment')
 }
 
 </script>

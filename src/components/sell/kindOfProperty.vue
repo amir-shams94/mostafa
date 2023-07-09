@@ -8,7 +8,7 @@
 ">What kind of property do yoou want to sell</h1>
 
             <div class="row" style="justify-content: center;">
-                <div class="col-md-3 q-mb-lg q-mr-xl text-center cursor" v-for="(value, index) in inputValues" :key="index">
+                <div class="col-md-3 q-mb-lg q-mr-sm text-center cursor" v-for="(value, index) in inputValues" :key="index">
 
                     <input type="hidden" ref="hiddenInputs" :value="value" />
                     <q-btn class="q-pa-md q-px-md size-btn" color="white" text-color="black" @click="nextStep(index)">{{
@@ -66,8 +66,8 @@ function nextStep(index) {
     const hiddenInputValue = hiddenInputs.value[index].value;
     store.updateSeller({ kideOfProperty: hiddenInputValue });
 
-    router.push('/criteria')
-    
+    router.push('/seller/criteria')
+
 
 }
 
