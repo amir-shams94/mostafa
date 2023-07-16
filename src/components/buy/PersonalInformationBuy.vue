@@ -37,7 +37,7 @@ font-size: 24px;
 
 <script setup>
 import { reactive } from 'vue';
-import { useSellerStore } from '../../stores/seller.js'
+import { useBuyerStore } from '../../stores/buyer.js'
 import { useQuasar } from 'quasar'
 
 import { useRouter } from 'vue-router'
@@ -49,8 +49,8 @@ const personalInformation = reactive({
 })
 
 const router = useRouter()
-const store = useSellerStore()
-
+const store = useBuyerStore()
+console.log(personalInformation);
 const $q = useQuasar()
 function sentForm() {
     $q.notify({
@@ -59,7 +59,7 @@ function sentForm() {
         position: "top",
     });
     // console.log(route.params.state, route.params.city, zipCode.value, addressProperty.value)
-    store.updateSeller({ personalInformation });
+    store.updateBuyer({ personalInformation });
     router.push('/buyer/congratulations')
 }
 

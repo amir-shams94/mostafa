@@ -59,6 +59,7 @@ function sentForm() {
     });
     // console.log(route.params.state, route.params.city, zipCode.value, addressProperty.value)
     store.updateSeller({ personalInformation });
+    console.log(store.seller);
     router.push('/seller/congratulations')
 }
 

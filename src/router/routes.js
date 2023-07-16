@@ -76,7 +76,7 @@ const routes = [
             component: () => import("components/buy/IndexCitesBuy.vue"),
           },
           {
-            path: "kindOfPropertyBuyer",
+            path: "states/:state/:city/kindOfPropertyBuyer",
             name: "kindOfPropertyBuyer",
             component: () => import("components/buy/kindOfProperty.vue"),
           },

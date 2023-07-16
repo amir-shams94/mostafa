@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-3 q-mb-lg q-mr-xl text-center cursor">
 
-                <q-input label-color="white" v-model="other" outlined rounded label="other" />
+                <q-input label-color="white" v-model="otherInput" outlined rounded label="other" />
 
 
             </div>
@@ -42,16 +42,22 @@ const router = useRouter()
 
 const inputValues = ref(['cash', 'Private money', 'Ioan']);
 const hiddenInputs = ref([]);
-const other = ref('')
+const otherInput = ref('')
 
 const store = useBuyerStore()
 
 function nextStep(index) {
+    const other = otherInput.value
 
-    const hiddenInputValue = hiddenInputs.value[index].value;
-    console.log(hiddenInputValue)
 
-    store.updateBuyer({ HowMakeYourPayment: hiddenInputValue });
+    if (other === '') {
+        const hiddenInputValue = hiddenInputs.value[index].value;
+        store.updateBuyer({ HowMakeYourPayment: hiddenInputValue });
+    } else {
+        store.updateBuyer({ HowMakeYourPayment: other });
+    }
+
+
     router.push('/buyer/optionOffer')
 }
 

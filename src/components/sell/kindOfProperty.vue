@@ -51,11 +51,10 @@
 <script setup>
 import { ref } from 'vue';
 import { useSellerStore } from '../../stores/seller.js'
-import { useRouter } from 'vue-router'
+import { useRouter, } from 'vue-router'
 
 const store = useSellerStore()
 const router = useRouter()
-
 
 const inputValues = ref(['Single Family', 'Multy-family', 'TownsHomes', ' Mobiles Homes', 'Apartmens', 'Condos']);
 const hiddenInputs = ref([]);

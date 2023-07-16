@@ -51,7 +51,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useBuyerStore } from '../../stores/buyer.js'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const store = useBuyerStore()
 const router = useRouter()
@@ -59,12 +59,13 @@ const router = useRouter()
 
 const inputValues = ref(['Single Family', 'Multy-family', 'TownsHomes', ' Mobiles Homes', 'Apartmens', 'Condos']);
 const hiddenInputs = ref([]);
+const route = useRoute()
 
 
 
 function nextStep(index) {
     const hiddenInputValue = hiddenInputs.value[index].value;
-    store.updateBuyer({ kideOfProperty: hiddenInputValue });
+    store.updateBuyer({ state: route.params.state, city: route.params.city, kideOfProperty: hiddenInputValue });
 
     router.push('/buyer/RangePrice')
 

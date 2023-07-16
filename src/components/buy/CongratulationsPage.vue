@@ -22,21 +22,20 @@
 
 <script setup>
 import { ref } from 'vue';
-import { useSellerStore } from '../../stores/seller.js'
+import { useBuyerStore } from '../../stores/buyer.js'
 import { useQuasar } from 'quasar'
-import { useRoute, useRouter } from 'vue-router'
-const zipCode = ref('')
-const addressProperty = ref('')
-const route = useRoute()
-const router = useRouter()
-const store = useSellerStore()
-console.log(route.params)
+
+
+
+const store = useBuyerStore()
+
 const $q = useQuasar()
-function sentForm() {
-    // console.log(route.params.state, route.params.city, zipCode.value, addressProperty.value)
-    // store.updateSeller({ state: route.params.state, city: route.params.city, zipCode: zipCode.value, addressProperty: addressProperty.value });
-    router.push('/information')
-}
+const payload = store.dataBuyer
+console.log(payload);
+// async function postData(payload) {
+//     await store.postDataOfSeller(payload)
+// }
+// postData()
 
 </script>
 
